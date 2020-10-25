@@ -4,9 +4,7 @@
             "name": "WSL",
             "includePath": [
                 "${workspaceFolder}",
-                "/usr/lib/gcc/x86_64-linux-gnu/7/include",
                 "/usr/local/include",
-                "/usr/include/x86_64-linux-gnu",
                 "/usr/include"
             ],
             "compilerPath": "/usr/bin/g++",
@@ -16,9 +14,7 @@
             "browse": {
                 "path": [
                     "${workspaceFolder}",
-                    "/usr/lib/gcc/x86_64-linux-gnu/7/include",
                     "/usr/local/include",
-                    "/usr/include/x86_64-linux-gnu",
                     "/usr/include"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
