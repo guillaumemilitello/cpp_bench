@@ -14,7 +14,11 @@ public:
         , _outFile(outFileName_)
         , _expFile(expFileName_)
         , _expLines(getLines(_expFile))
-    {}
+    {
+        std::ofstream ofs;
+        ofs.open(outFileName_, std::ofstream::out | std::ofstream::trunc);
+        ofs.close();
+    }
 
     void start()
     {
@@ -22,7 +26,7 @@ public:
     }
 
     void stop()
-    { 
+    {
         _duration = (std::clock() - _startClock) / (double) 1000;
         _outFile.seekp(0, std::ios::beg);
         _outLines = getLines(_outFile);
@@ -122,13 +126,19 @@ private:
         for (auto i=expSize; i < outSize; ++i)
         {
             output += BOLDRED + out_[i] + RESET;
-            result = false;
+            if (out_[i] != ' ')
+            {
+                result = false;
+            }
         }
 
         for (auto i=outSize; i < expSize; ++i)
         {
             output += BOLDYELLOW + exp_[i] + RESET;
-            result = false;
+            if (exp_[i] != ' ')
+            {
+                result = false;
+            }
         }
         return std::make_tuple(result, output);
     }
