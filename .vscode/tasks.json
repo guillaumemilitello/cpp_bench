@@ -11,7 +11,8 @@
           "-o",
           "main.out",
           "-Wall",
-          "-std=c++14"
+          "-std=c++17",
+          "-lpthread"
         ],
         "options": {
           "cwd": "${workspaceFolder}"
