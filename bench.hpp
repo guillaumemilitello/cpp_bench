@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <fstream>
 #include <ctime>
@@ -77,14 +79,14 @@ public:
             std::cout << BOLDRED << "FAIL [" << _duration << " ms]" << RESET << "\n";
         }
     }
-  
+
     template<typename T>
     friend Bench& operator>>(Bench& bench_, T& t_)
     {
         bench_._inFile >> t_;
         return bench_;
     }
-    
+
     template<typename T>
     friend Bench& operator<<(Bench& bench_, const T& t_)
     {
@@ -105,7 +107,7 @@ private:
         static const std::string RESET {"\033[0m"};
         static const std::string BOLDRED {"\033[1m\033[31m"};
         static const std::string BOLDYELLOW {"\033[1m\033[33m"};
-    
+
         bool result {true};
         std::string output;
         const size_t outSize {out_.size()};
