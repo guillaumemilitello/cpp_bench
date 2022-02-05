@@ -1,8 +1,31 @@
 #pragma once
 
+#include <random>
 #include <iostream>
 #include <type_traits>
 #include <tuple>
+
+namespace util
+{
+
+template<typename T>
+struct generate_random
+{
+    T _min, _max;
+public:
+    explicit generate_random(const T& min, const T& max) : _min(min), _max(max) {}
+    T operator()() { return _min + rand() % (( _max + 1 ) - _min); }
+};
+
+template<typename T>
+std::vector<T> get_random_vector(size_t size, const T& min, const T& max)
+{
+    std::vector<T> v(size);
+    std::generate_n(v.begin(), size, generate_random(min, max));
+    return v;
+}
+
+} // namespace util
 
 template<typename T, typename S>
 std::ostream& operator<<(std::ostream& os, const std::pair<T, S>& v)
