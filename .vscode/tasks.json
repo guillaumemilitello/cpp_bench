@@ -4,7 +4,7 @@
       {
         "type": "shell",
         "label": "build bench",
-        "command": "/usr/bin/g++",
+        "command": "/usr/bin/clang++",
         "args": [
           "-g",
           "main.cpp",

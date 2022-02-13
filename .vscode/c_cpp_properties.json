@@ -3,19 +3,15 @@
         {
             "name": "WSL",
             "includePath": [
-                "${workspaceFolder}",
-                "/usr/local/include",
-                "/usr/include"
+                "${workspaceFolder}"
             ],
-            "compilerPath": "/usr/bin/g++",
+            "compilerPath": "/usr/bin/clang++",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "gcc-x64",
+            "intelliSenseMode": "clang-x64",
             "browse": {
                 "path": [
-                    "${workspaceFolder}",
-                    "/usr/local/include",
-                    "/usr/include"
+                    "${workspaceFolder}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
