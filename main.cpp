@@ -1,15 +1,6 @@
-#include <cstdio>
-#include <string>
-#include <vector>
-#include <iostream>
-#include <limits>
-#include <regex>
-#include <fstream>
-#include <ctime>
-#include <cstring>
-#include <unordered_map>
-
 #include "bench.hpp"
+
+#include <iostream>
 
 int main()
 {

@@ -1,9 +1,11 @@
-#pragma once
+#ifndef BENCH_HPP
+#define BENCH_HPP
 
 #include <iostream>
 #include <fstream>
 #include <ctime>
 #include <vector>
+#include <tuple>
 #include <stdexcept>
 
 class Bench
@@ -11,7 +13,7 @@ class Bench
 public:
     explicit Bench(const std::string& inFileName_,
                    const std::string& outFileName_,
-                   const std::string& expFileName_)
+                   const std::string& expFileName_) noexcept
         : _inFile(inFileName_)
         , _outFile(outFileName_)
         , _expFile(expFileName_)
@@ -29,7 +31,7 @@ public:
 
     void stop()
     {
-        _duration = (std::clock() - _startClock) / (double) 1000;
+        _duration = (std::clock() - _startClock) / static_cast<double>(1000);
         _outFile.seekp(0, std::ios::beg);
         _outLines = getLines(_outFile);
     }
@@ -180,3 +182,5 @@ private:
     const std::vector<std::string> _expLines;
     std::vector<std::string> _outLines;
 };
+
+#endif // BENCH_HPP

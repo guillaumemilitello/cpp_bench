@@ -1,6 +1,8 @@
-#pragma once
+#ifndef UTIL_HPP
+#define UTIL_HPP
 
 #include <random>
+#include <algorithm>
 #include <iostream>
 #include <type_traits>
 #include <tuple>
@@ -59,10 +61,17 @@ private:
 template<typename T>
 struct generate_random
 {
+    struct MinMax { int min; int max; };
+    explicit generate_random(const MinMax& minMax) : _min(minMax.min), _max(minMax.max) {}
+    T operator()()
+    {
+        std::random_device rd;
+        std::mt19937 mt(rd());
+        std::uniform_real_distribution<double> distrib(_min, _max);
+        return distrib(mt);
+    }
+private:
     T _min, _max;
-public:
-    explicit generate_random(const T& min, const T& max) : _min(min), _max(max) {}
-    T operator()() { return _min + rand() % (( _max + 1 ) - _min); }
 };
 
 template<typename T>
@@ -114,3 +123,5 @@ std::ostream& operator<<(std::ostream& os, const T& c)
     os << "]";
     return os;
 }
+
+#endif // UTIL_HPP
