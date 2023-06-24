@@ -1,9 +1,10 @@
 {
     "configurations": [
         {
-            "name": "WSL",
+            "name": "Linux",
             "includePath": [
-                "${workspaceFolder}"
+                "${workspaceFolder}/**",
+                ""
             ],
             "compilerPath": "/usr/bin/clang++",
             "cStandard": "c11",

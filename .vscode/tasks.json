@@ -3,7 +3,7 @@
     "tasks": [
       {
         "type": "shell",
-        "label": "build bench",
+        "label": "Build bench",
         "command": "/usr/bin/clang++",
         "args": [
           "-g",
@@ -27,7 +27,7 @@
       },
       {
         "type": "shell",
-        "label": "run bench",
+        "label": "Run bench",
         "command": "./main.out",
         "args": [],
         "options": {
