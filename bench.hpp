@@ -103,6 +103,12 @@ public:
         return bench_;
     }
 
+    friend Bench& operator<<(Bench& bench_, bool t_)
+    {
+        bench_._outFile << (t_ ? "true" : "false");
+        return bench_;
+    }
+
 private:
     std::tuple<bool, std::string> computeDiff(const std::string& out_, const std::string& exp_) const
     {

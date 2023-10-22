@@ -1,22 +1,34 @@
 #include "bench.hpp"
 
 #include <iostream>
+#include <string>
+#include <vector>
+#include <set>
+#include <map>
+#include <unordered_map>
+#include <unordered_set>
+#include <deque>
+#include <numeric>
+
+using namespace std;
+
+class Solution {
+public:
+};
 
 int main()
 {
     try
     {
         Bench bench("in.txt", "out.txt", "expected.txt");
+
+        Solution s;
+
         bench.start();
         {
-            //************* CODE HERE *************//
+            //************* CALL SOLUTION METHOD HERE *************//
 
-            std::string test_input;
-            int number;
-            bench >> test_input >> number;
-            bench << test_input << " " << number * 40;
-
-            //************* CODE HERE *************//
+            //************* CALL SOLUTION METHOD HERE *************//
         }
 
         bench.stop();
