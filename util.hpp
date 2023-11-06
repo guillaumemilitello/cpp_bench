@@ -100,11 +100,11 @@ std::ostream& operator<<(std::ostream& os, const std::pair<T, S>& v)
 template<typename... Args>
 std::ostream& operator<<(std::ostream& os, std::tuple<Args...> const& t)
 {
-  bool first = true;
-  os << "(";
-  apply([&](auto&&... args){ ((os << (first ? "" : ",") << args, first = false), ...); }, t);
-  os << ")";
-  return os;
+    bool first = true;
+    os << "(";
+    apply([&](auto&&... args){ ((os << (first ? "" : ",") << args, first = false), ...); }, t);
+    os << ")";
+    return os;
 }
 
 template<typename T, typename = std::enable_if_t<util::is_container<T>::value>>
