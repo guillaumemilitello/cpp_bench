@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
       {
-        "name": "build and debug bench",
+        "name": "Build and Debug bench",
         "type": "cppdbg",
         "request": "launch",
         "program": "${workspaceFolder}/main.out",
@@ -12,7 +12,7 @@
         "environment": [],
         "externalConsole": false,
         "MIMode": "gdb",
-        "preLaunchTask": "build bench",
+        "preLaunchTask": "Build bench",
         "miDebuggerPath": "/usr/bin/gdb",
         "setupCommands": [
             {

@@ -59,6 +59,8 @@
         "shared_mutex": "cpp",
         "compare": "cpp",
         "concepts": "cpp",
-        "numbers": "cpp"
-    }
+        "numbers": "cpp",
+        "list": "cpp"
+    },
+    "cmake.configureOnOpen": false
 }
